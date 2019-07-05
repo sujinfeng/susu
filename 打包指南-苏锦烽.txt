@@ -1,0 +1,62 @@
+jar -cvf riskControl.war * （打包当前页面的所有内容）
+
+scp -r riskControl.war susu@10.35.16.243:software/tomcat/apache-tomcat-8.5.37/webapps/
+scp -r riskcontrol.war susu@10.35.16.243:software/tomcat/apache-tomcat-8.5.37/webapps/
+    (-r 递归整个目录，传整个目录文件夹的时候加)
+scp -r riskControl.war susu@10.35.16.243:software/tomcat/temp/
+
+ssh susu@10.35.16.243(ssh远程登录linux)
+
+cd software/tomcat/apache-tomcat-8.5.37/conf
+
+在tomcat里的<Host>标签内加入<Context path='/riskControl' docBase='/home/susu/software/tomcat/apache-tomcat-8.0.46/webapps/riskControl.war' reloadable='true'/>
+
+
+cd software/tomcat/apache-tomcat-8.5.37/webapps/
+
+
+rm -f layui-admin2.war（强制删除文件 -f:强制）
+rm -rf layui-admin2(强制删除文件夹及以下文件)
+
+mv -i 文件名 目录名 (将文件移动到目标目录  -i:若指定目录已有同名文件，则先询问是否覆盖旧文件)
+
+cp -r webapps/  /home/susu/software/tomcat/apache-tomcat-8.5.37/（copy源文件需要加-r）
+
+解压总结
+1、*.tar 用 tar –xvf 解压
+2、*.gz 用 gzip -d或者gunzip 解压
+3、*.tar.gz和*.tgz 用 tar –xzf 解压
+4、*.bz2 用 bzip2 -d或者用bunzip2 解压
+5、*.tar.bz2用tar –xjf 解压
+6、*.Z 用 uncompress 解压
+7、*.tar.Z 用tar –xZf 解压
+8、*.rar 用 unrar e解压
+9、*.zip 用 unzip 解压
+
+
+
+
+http://10.35.16.243:8080/riskControl
+
+
+
+
+git：：：
+$ git status -s
+
+$ git add -A
+
+$ git commit -a -m'初始化风控前端'
+
+git push origin master
+
+(git 更新本地项目)：git pull git@项目路径
+
+git diff saict-webapp/src/main/java/com/saict/controller/NewsController.java(比较上一个版本)
+
+git checkout saict-webapp/src/main/java/com/saict/controller/NewsController.java(还原上一个版本)
+
+
+maven : ：：(重新编译)
+mvn -U clean install -DskipTests
+

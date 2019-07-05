@@ -1,0 +1,82 @@
+ssh susu@10.35.16.185
+
+linux：
+1.      以下这条命令是检查java 进程是否存在：ps -ef |grep java
+        
+        中间的|是管道命令 是指ps命令与grep同时执行
+        PS是LINUX下最常用的也是非常强大的进程查看命令
+        grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。（能使用正则表达式）
+
+        字段含义如下：
+        UID       PID       PPID      C     STIME    TTY       TIME         CMD
+
+        zzw      14124   13991      0     00:38      pts/0      00:00:00    grep --color=auto dae
+
+         
+
+        UID     ：程序被该 UID 所拥有
+
+        PID     ：就是这个程序的 ID 
+
+        PPID    ：则是其上级父程序的ID
+
+        C       ：CPU使用的资源百分比
+
+        STIME   ：系统启动时间
+
+        TTY     ：登入者的终端机位置
+
+        TIME    ：使用掉的CPU时间。
+
+        CMD     ：所下达的是什么指令
+
+        
+        
+2.      ls -l  显示一个文件的属性以及文件所属的用户和组
+        ls -a  全部的文件，连同隐藏档( 开头为 . 的文件) 一起列出来
+        ls -d  仅列出目录本身，而不是列出目录内的文件数据
+        pwd    显示当前所在目录
+        mkdir  创建新的目录
+        rmdir  删除空文件夹
+        rm     删除文件
+        mv     移动文件或重命名 (mv 移动者 收纳者) 如果收纳者不存在则将移动者改为收纳者的名  
+
+        
+3.cat/tac  查看文件内容，
+
+
+4.nl    显示行号
+       -b   行号显示方式主要两种 a 不论空格都列出行号 t 空格行不列行号
+       -n   行号显示方式  ln 左边显示  rn 右边显示不加零  rz右边显示加0
+       -w   行号栏的占用位数
+       
+    
+5.more/less  一页一页翻动  q退出
+
+
+6.hand/tail   去 前/后 几页内容
+
+
+
+7.grep ‘test’ aa bb cc 　　 #显示在aa，bb，cc文件中包含test的行
+
+git：
+1.git add时警告warning: LF will be replaced by CRLF in bmap.js；
+  原因是需要提交的文件是在windows下生成的，windows中的换行符为 CRLF， 而在linux下的换行符为LF，所以在执行add . 时出现提示，解决办法：
+   git config --global core.autocrlf false 再执行git 提交
+
+dos：
+1.dir 查看当前目录下的文件
+2.md 新建文件夹
+
+小知识：
+1. RequireJS模块化加载，解决js模块依赖问题。
+2. Underscore.js-精巧而强大实用功能库。强化JavaScript函数式编程的辅助类库。
+3. position: absolute;
+   top:50%; 
+   transform: translate(0,-50%);
+   （上下居中，老忘）
+   
+   
+vue:
+进入工程，npm run dev 启动项目
