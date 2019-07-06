@@ -60,10 +60,78 @@ linux：
 
 7.grep ‘test’ aa bb cc 　　 #显示在aa，bb，cc文件中包含test的行
 
-git：
+//git：：：
 1.git add时警告warning: LF will be replaced by CRLF in bmap.js；
   原因是需要提交的文件是在windows下生成的，windows中的换行符为 CRLF， 而在linux下的换行符为LF，所以在执行add . 时出现提示，解决办法：
    git config --global core.autocrlf false 再执行git 提交
+   
+
+$ git status -s
+
+$ git add -A
+
+$ git commit -a -m'初始化风控前端'
+
+git push origin master
+
+(git 更新本地项目)：git pull git@项目路径
+
+git diff saict-webapp/src/main/java/com/saict/controller/NewsController.java(比较上一个版本)
+
+git checkout saict-webapp/src/main/java/com/saict/controller/NewsController.java(还原上一个版本)
+
+//创建并切换到dev  简写$ git checkout -b dev
+$ git branch dev
+$ git checkout dev
+
+
+查看分支：git branch
+
+创建分支：git branch <name>
+
+切换分支：git checkout <name>
+
+创建+切换分支：git checkout -b <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+
+合并到当前分支并提交(以当前为dev分支合并fat1为例)：
+    git merge --no-ff -m "提交" fat1;
+ 
+
+ 
+本地创建分支提交到远程仓库
+    1:本地创建分支dev
+
+    $ git branch dev
+
+    2:下面是把本地分支提交到远程仓库
+
+    $ git push origin dev
+
+    3:查看一下远程仓库有几个分支
+
+    $ git branch -a
+    
+//默认clone下来的只能看到master
+git checkout -b dev origin/dev (创建dev并关联origin)；    
+ 
+//clone指定分支
+git clone -b dev https://github.com/sujinfeng/riskcontrol.git 
+
+//错误磁盘空间不足
+write error: No space left on device
+ 
+
+//冲突解决
+先 git pull origin dev 
+把分支合并后 git merge work1，修改冲突，然后重新git add ，git commit 。
+记得把work1也合并一遍dev：git merge dev
+在dev下git push origin dev 
+//git end
+
 
 dos：
 1.dir 查看当前目录下的文件
@@ -75,8 +143,7 @@ dos：
 3. position: absolute;
    top:50%; 
    transform: translate(0,-50%);
-   （上下居中，老忘）
-   
+   （上下居中，老忘 ）
    
 vue:
 进入工程，npm run dev 启动项目

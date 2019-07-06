@@ -41,38 +41,6 @@ http://10.35.16.243:8080/riskControl
 
 
 
-git：：：
-$ git status -s
-
-$ git add -A
-
-$ git commit -a -m'初始化风控前端'
-
-git push origin master
-
-(git 更新本地项目)：git pull git@项目路径
-
-git diff saict-webapp/src/main/java/com/saict/controller/NewsController.java(比较上一个版本)
-
-git checkout saict-webapp/src/main/java/com/saict/controller/NewsController.java(还原上一个版本)
-
-//创建并切换到dev  简写$ git checkout -b dev
-$ git branch dev
-$ git checkout dev
-
-
-查看分支：git branch
-
-创建分支：git branch <name>
-
-切换分支：git checkout <name>
-
-创建+切换分支：git checkout -b <name>
-
-合并某分支到当前分支：git merge <name>
-
-删除分支：git branch -d <name>
-
 maven : ：：(重新编译)
 mvn -U clean install -DskipTests
 
