@@ -56,7 +56,14 @@ git diff saict-webapp/src/main/java/com/saict/controller/NewsController.java(比
 
 git checkout saict-webapp/src/main/java/com/saict/controller/NewsController.java(还原上一个版本)
 
+//创建并切换到dev  简写$ git checkout -b dev
+$ git branch dev
+$ git checkout dev
+
+//查看当前分钟
+$ git branch
 
 maven : ：：(重新编译)
 mvn -U clean install -DskipTests
+
 
