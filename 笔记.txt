@@ -65,6 +65,12 @@ linux：
   原因是需要提交的文件是在windows下生成的，windows中的换行符为 CRLF， 而在linux下的换行符为LF，所以在执行add . 时出现提示，解决办法：
    git config --global core.autocrlf false 再执行git 提交
    
+ 
+如果git开启后并未现实工作分支可以先删除.gitconfig文件，然后重新配置
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+   
 
 $ git status -s
 
@@ -99,7 +105,9 @@ $ git checkout dev
 
 合并到当前分支并提交(以当前为dev分支合并fat1为例)：
     git merge --no-ff -m "提交" fat1;
- 
+    
+        git merge –no-ff 可以保存你之前的分支历史。能够更好的查看 merge历史，以及branch 状态。
+        git merge 则不会显示 feature，只保留单条分支记录
 
  
 本地创建分支提交到远程仓库
@@ -123,11 +131,11 @@ git clone -b dev https://github.com/sujinfeng/riskcontrol.git
 
 //错误磁盘空间不足
 write error: No space left on device
- 
+
 
 //冲突解决
-先 git pull origin dev 
-把分支合并后 git merge work1，修改冲突，然后重新git add ，git commit 。
+先在dev分支下 git pull origin dev 
+把分支合并后 git merge --no-ff -m "提交" work1，修改冲突，然后重新git add ，git commit 。
 记得把work1也合并一遍dev：git merge dev
 在dev下git push origin dev 
 //git end
@@ -147,3 +155,5 @@ dos：
    
 vue:
 进入工程，npm run dev 启动项目
+
+哈哈哈
