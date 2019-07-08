@@ -134,10 +134,13 @@ write error: No space left on device
 
 
 //冲突解决
-先在dev分支下 git pull origin dev 
-把分支合并后 git merge --no-ff -m "提交" work1，修改冲突，然后重新git add ，git commit 。
-记得把work1也合并一遍dev：git merge dev
+先git checkout dev进入dev分支
+在dev分支下 git pull origin dev 
+然后把分支合并后 git merge --no-ff -m "提交信息" work1，
+在本地文件进行冲突修改，然后重新git add ，git commit 。
 在dev下git push origin dev 
+接着git checkout work1进入work1分支
+记得把work1也合并一遍dev：git merge dev
 //git end
 
 
