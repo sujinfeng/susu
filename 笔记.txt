@@ -141,6 +141,13 @@ write error: No space left on device
 在dev下git push origin dev 
 接着git checkout work1进入work1分支
 记得把work1也合并一遍dev：git merge dev
+
+git log --pretty 查看历史版本
+
+git diff id1 id2 对比两个版本文件变化
+
+
+
 //git end
 
 
