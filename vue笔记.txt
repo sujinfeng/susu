@@ -1,0 +1,38 @@
+
+命令行执行 : npm install -g vue-cli    // 加-g是安装到全局
+
+
+
+
+**: 如果npm在国内的网络环境下可能会比较慢，解决方案：
+
+  使用淘宝镜像:
+
+1>.官方网址：http://npm.taobao.org；
+
+2>.安装：npm install cnpm -g --registry=https://registry.npm.taobao.org；  注意：安装完后最好查看其版本号cnpm -v或关闭命令提示符重新打开，安装完直接使用有可能会出现错误；
+
+3>.注：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）。
+
+4> 如何更新npm的方法：  可以使用 npm install -g npm 来更新版本
+
+
+
+
+安装npm install时，长时间停留在
+fetchMetadata: sill mapToRegistry uri http://registry.npmjs.org/whatwg-fetch处，此处需要在对应的URL处下载一些文件，只要网络稳定，一般花不了多长时间方法如下：
+更换成淘宝的源
+npm config set registry https://registry.npm.taobao.org
+– 配置后可通过下面方式来验证是否成功
+npm config get registry
+– 或npm info express
+
+
+
+解决npm install时报错无法安装chromedriver的问题
+npm install --ignore-scripts
+
+
+
+用vue建项目后,npm install 发现老卡在chromedriver 报错上, 后来网上查了下，发现了解决办法
+npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
