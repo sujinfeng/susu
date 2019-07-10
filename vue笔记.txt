@@ -36,3 +36,8 @@ npm install --ignore-scripts
 
 用vue建项目后,npm install 发现老卡在chromedriver 报错上, 后来网上查了下，发现了解决办法
 npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+
+
+vue init webpack-simple vueDome02//新建vue项目
+cd vueDome02
+npm install
