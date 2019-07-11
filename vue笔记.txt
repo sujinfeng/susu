@@ -38,6 +38,14 @@ npm install --ignore-scripts
 npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
 
 
-vue init webpack-simple vueDome02//新建vue项目
+vue init webpack-simple vueDome02//新建vue项目，简化版不加载依赖需要手动加载
 cd vueDome02
 npm install
+
+
+vue:
+进入工程，npm run dev 启动项目
+
+//实用的技术文档网站
+https://www.w3cschool.cn/vuejs/lh5x1jrv.html
+
