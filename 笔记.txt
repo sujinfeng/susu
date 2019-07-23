@@ -70,7 +70,7 @@ linux：
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 
-   
+git stash(当前工作文档还原至上一个版本)
 
 $ git status -s
 
