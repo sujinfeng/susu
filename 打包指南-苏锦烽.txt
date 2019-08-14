@@ -3,7 +3,7 @@ jar -cvf riskControl.war * （打包当前页面的所有内容）
 scp -r riskControl.war susu@10.35.16.243:software/tomcat/apache-tomcat-8.5.37/webapps/
 scp -r riskcontrol.war susu@10.35.16.243:software/tomcat/apache-tomcat-8.5.37/webapps/
     (-r 递归整个目录，传整个目录文件夹的时候加)
-scp -r riskControl.war susu@10.35.16.243:software/tomcat/temp/
+scp -r riskControl.war susu@10.35.16.243:tmp/
 
 ssh susu@10.35.16.243(ssh远程登录linux)
 
@@ -44,4 +44,4 @@ http://10.35.16.243:8080/riskControl
 maven : ：：(重新编译)
 mvn -U clean install -DskipTests
 
-哈哈哈
+source /etc/profile  生效环境变量
