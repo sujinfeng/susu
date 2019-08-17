@@ -4,6 +4,9 @@ scp -r riskControl.war susu@10.35.16.243:software/tomcat/apache-tomcat-8.5.37/we
 scp -r riskcontrol.war susu@10.35.16.243:software/tomcat/apache-tomcat-8.5.37/webapps/
     (-r 递归整个目录，传整个目录文件夹的时候加)
 scp -r riskControl.war susu@10.35.16.243:tmp/
+scp -r chinaTower.war root@10.35.6.52:/tmp/
+
+10.35.6.52 home/d
 
 ssh susu@10.35.16.243(ssh远程登录linux)
 
