@@ -1,7 +1,7 @@
 
 命令行执行 : npm install -g vue-cli    // 加-g是安装到全局
 
-
+(sudo ln -s ~/software/node-v10.16.3/bin/npm /usr/local/bin  :npm映射到全局)
 
 
 **: 如果npm在国内的网络环境下可能会比较慢，解决方案：

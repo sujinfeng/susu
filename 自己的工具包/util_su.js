@@ -15,10 +15,9 @@
 	} else {
 		factory( global );
 	}
-})(typeof window !== "undefined" ? window : this, function( window) {
+})(typeof window !== "undefined" ? window : this, function( window ,noGlobal) {
     var UTIL_SU ={
-        GLOBALIP:""
-        ,locationHref:function(url){
+        locationHref:function(url){
             //页面跳转
             window.location.href=url;
         }
@@ -34,7 +33,7 @@
                 type: uploadType,
                 async: true,
                 data:uploadData,
-                url:UTIL_SU.GLOBALIP+url,
+                url:url,
                 dataType: 'json',
                 beforeSend: function (XMLHttpRequest) {
                     if(sessionStorage.tx_token){
@@ -1290,6 +1289,15 @@
             }
         }
     }
-    window.UTIL_SU = UTIL_SU;
+    
+    if ( typeof define === "function" && define.amd ) {
+        define( "util_su", [], function() {
+            return UTIL_SU;
+        } );
+    }
+        
+    if ( !noGlobal ) {
+        window.UTIL_SU = window._su =UTIL_SU;
+    }
     return UTIL_SU;
 });
