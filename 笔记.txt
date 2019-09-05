@@ -146,7 +146,9 @@ git log --pretty 查看历史版本
 
 git diff id1 id2 对比两个版本文件变化
 
-
+本地git init 
+GitHub上创建项目，然后git remote add origin http://githup.com/项目路径.git
+关联项目就可以 push了
 
 //git end
 
