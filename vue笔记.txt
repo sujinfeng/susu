@@ -49,3 +49,13 @@ vue:
 //实用的技术文档网站
 https://www.w3cschool.cn/vuejs/lh5x1jrv.html
 
+
+######################  vue部署   ####################
+去掉代理将vue.config.js 底下的 proxy:{}的内容注释。
+
+vue-cli3已将baseURL弃用，应添加为 publicPath:process.env.NODE_ENV === "production" ? "/mydemo/" : "",
+
+如果添加了环境配置文件。需要将.env.production文件里的路径换成开发路径。
+
+然后 npm run build ,得到dist文件，将文件移至tomcat的webapps底下。即可
+
