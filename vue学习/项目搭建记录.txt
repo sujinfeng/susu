@@ -1,0 +1,49 @@
+################################    前期安装     #############################
+linux上安装：{yun install -y nodejs} {npm install -g n} {n 10.16.3 stable} 重启；
+安装nodejs版本为v10.16.3
+
+安装vue-cli3 ：{npm install -g @vue/cli}
+（注意，要vue-cli3需要nodeJS-v8.9以上的版本，window可更改环境配置改变node版本）
+（如果有安装1.x或2.x需要先移除。{npm uninstall vue-cli -g}）
+
+
+
+################################    使用vue-cli3搭建项目     #############################
+
+新建项目目录wisdompole,进入根目录，通过{vue create .} 在当前目录新建项目，目录名为项目名
+
+通过之前配置的preset-su的配置进行搭建。(vue-router,vuex,stylus,babel,eslint)
+
+搭建完成后提示了npm有最新版本，就{npm install -g npm} 更新了npm
+
+新建static静态文件目录.
+
+进入src目录 新建目录（api,filters,icons,utils,styles）
+
+加载封装axios : {npm install axios --save}
+
+加载element-ui : {vue add element}
+
+加载echarts ：{npm install echarts -S}
+
+加载echarts-amap ：{npm install echarts -S}
+
+
+
+################################    nginx服务器安装     #############################
+sudo apt install nginx(配置文件需要重新修改)
+
+【nginx配置相关知识：主要是http下的server配置：
+    root /home/susu/server/nginx 表示webapp的位置
+    location ^~/apis/{   #location = /apis 表示精确查找  location = /apis
+        proxy_pass http://10.35.16.66:8888/
+            #结尾加不加/斜线的结果
+            #proxy_pass http://10.35.16.66:8888   代理URL：http://10.35.16.66:8888/apis/post
+            #proxy_pass http://10.35.16.66:8888/  代理URL：http://10.35.16.66:8888/post
+    }
+】
+
+systemctl restart nginx修改配置文件后重启nginx
+
+systemctl start nginx
+systemctl stop nginx

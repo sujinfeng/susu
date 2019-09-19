@@ -49,13 +49,22 @@ vue:
 //实用的技术文档网站
 https://www.w3cschool.cn/vuejs/lh5x1jrv.html
 
+######################  
+vue.js是通过Object.defineProperty实现双向绑定，Object.defineProperty是es5上的方法，这也就是为什么vue.js不兼容ie8及其以下浏览器的原因
+######################
 
-######################  vue部署   ####################
+######################  vue部署   ######################
 去掉代理将vue.config.js 底下的 proxy:{}的内容注释。
 
 vue-cli3已将baseURL弃用，应添加为 publicPath:process.env.NODE_ENV === "production" ? "/mydemo/" : "",
 
 如果添加了环境配置文件。需要将.env.production文件里的路径换成开发路径。
 
-然后 npm run build ,得到dist文件，将文件移至tomcat的webapps底下。即可
+然后 npm run build ,得到dist文件，将文件移至tomcat的webapps底下。即可（后台解决跨域就用tomcat，不然就用nginx）
 
+######################       开发笔记      ######################
+1.子组件向父组件传值：子组件触发this.$enit("evenName",data)  父组件监听@evenName="evenfn"  通过 evenfn(data){得到子组件的data}
+
+2.在组件中绑定事件必须加上.native修饰符  
+
+3、vue "@"是指令"v-bind"  ":"是指令"v-on"
