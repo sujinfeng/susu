@@ -1,0 +1,25 @@
+1.对dom进行增加隐藏导致页面崩溃，element的表头通过css隐藏导致失败
+
+2.
+加入自适应
+   npm i postcss-plugin-px2rem -S
+   配置 postcss-px2rem
+   .postcssrc.js
+       module.exports = {
+          plugins:[
+            require('postcss-plugin-px2rem'){
+                rootValue: 200,
+                exclude: /(node_module)/,排除ui组件
+                mediaQuery: false,
+                minPixelValue: 0
+            }
+          ]
+       }
+    npm i amfe-flexible
+    在main.js
+    import 'amfe-flexible'
+    
+3.音频插件vue-audio-native
+    npm install vue-audio-native --save
+
+4.视频监控插件liveolayer

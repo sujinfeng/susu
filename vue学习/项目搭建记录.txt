@@ -8,7 +8,7 @@ linux上安装：{yun install -y nodejs} {npm install -g n} {n 10.16.3 stable} �
 
 
 
-################################    使用vue-cli3搭建项目     #############################
+################################    使用vue-cli3搭建项目(大屏)     #############################
 
 新建项目目录wisdompole,进入根目录，通过{vue create .} 在当前目录新建项目，目录名为项目名
 
@@ -28,7 +28,22 @@ linux上安装：{yun install -y nodejs} {npm install -g n} {n 10.16.3 stable} �
 
 加载echarts-amap ：{npm install echarts -S}
 
-
+加入自适应
+   npm i postcss-px2rem -S
+   配置 postcss-px2rem
+   .postcssrc.js
+       module.exports = {
+          plugins:{},
+          'postcss-px2rem':{
+            remUnit:200.5
+          }
+       }
+    npm i amfe-flexible
+    在main.js
+    import 'amfe-flexible'
+    
+################################    使用vue-cli3搭建项目(后台管理)     #############################  
+ 
 
 ################################    nginx服务器安装     #############################
 sudo apt install nginx(配置文件需要重新修改)
