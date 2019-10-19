@@ -23,3 +23,25 @@
     npm install vue-audio-native --save
 
 4.视频监控插件liveolayer
+	npm install @liveqing/liveplayer
+	
+	npm i -D copy-webpack-plugin
+	
+	在vue.config.js里引入 
+		const CopyWebpackPlugin = require('copy-webpack-plugin')
+		然后把设置向vue输出，在module.exports里加入对象属性
+			configureWebpack: config => {
+				const plugins = [];
+				plugins.push(
+					new CopyWebpackPlugin([
+						{ from: 'node_modules/@liveqing/liveplayer/dist/component/crossdomain.xml'},
+						{ from: 'node_modules/@liveqing/liveplayer/dist/component/liveplayer.swf'},
+						{ from: 'node_modules/@liveqing/liveplayer/dist/component/liveplayer-lib.min.js', to: 'js/'}
+					])
+				);
+				config.plugins = [...config.plugins, ...plugins]
+			}
+		使用：直接在需要的调用的组件引入import LivePlayer from '@liveqing/liveplayer' 即可；
+
+5.添加拖拽组件。npm i -S vuedraggable
+			
