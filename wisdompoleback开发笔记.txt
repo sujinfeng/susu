@@ -43,5 +43,9 @@
 			}
 		使用：直接在需要的调用的组件引入import LivePlayer from '@liveqing/liveplayer' 即可；
 
-5.添加拖拽组件。npm i -S vuedraggable
+5.添加拖拽组件。npm i -S vuedraggable。
+
+6.加入录音组件 npm -i js-audio-recorder。
+
+7.项目音频录音需要调用麦克风，所以将项目改为https。
 			
