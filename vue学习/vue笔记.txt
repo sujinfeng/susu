@@ -70,3 +70,9 @@ vue-cli3已将baseURL弃用，应添加为 publicPath:process.env.NODE_ENV === "productio
 3、vue "@"是指令"v-bind"  ":"是指令"v-on"
 
 4、点击事件阻止事件冒泡@click.stop，在子组件上添加@click.native.stop
+
+5、vue 表单input无法输入：@1原因->因为，对this.form,单独添加成员，如 this.form.name = 'test';
+    @2解决->创建一个form对象，不去单一赋值，一次性替换整个form,
+      如
+        let form = { name: 'test', age: 18};
+        this.form = form;
