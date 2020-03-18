@@ -76,3 +76,5 @@ vue-cli3已将baseURL弃用，应添加为 publicPath:process.env.NODE_ENV === "productio
       如
         let form = { name: 'test', age: 18};
         this.form = form;
+6、全局混入Vue.mixin，vuex，事件总线EventBus = new Vue()的区别，
+　　在处理状态上，混入是由一方发起成员创建，对全局进行一个介入，让全部组件都拥有同一个对象，相对于vuex来说很轻便的能够实现全局获取统一状态，但是对于混入的接收方对成员的状态改变是只作用与自己的，这点无法像vuex那样成员状态发生改变，全局都可知。而事件总线，相对轻便，需要通过emit触发on监听，来对事件触发做出相应的状态调整，相对于vuex来说，事件总线更适合作为事件监听，而不是状态存储。总体来说，vuex的量级会比较大，相对较小的项目就没必要非得用到vuex。
