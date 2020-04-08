@@ -20,27 +20,35 @@
 
 
 安装npm install时，长时间停留在
-fetchMetadata: sill mapToRegistry uri http://registry.npmjs.org/whatwg-fetch处，此处需要在对应的URL处下载一些文件，只要网络稳定，一般花不了多长时间方法如下：
-更换成淘宝的源
-npm config set registry https://registry.npm.taobao.org
-– 配置后可通过下面方式来验证是否成功
-npm config get registry
-– 或npm info express
+--fetchMetadata: sill mapToRegistry uri http://registry.npmjs.org/whatwg-fetch处，此处需要在对应的URL处下载一些文件，只要网络稳定，一般花不了多长时间方法如下：
+超时的话就使用
+--永久使用
+----npm config set registry https://registry.npm.taobao.org
+--临时使用淘宝镜像
+---npm install node-sass --registry=http://registry.npm.taobao.org
+--配置后可通过下面方式来验证是否成功
+----npm config get registry
+----或npm info express
+
+npm install 如果无法执行出错。报错需
+--npm cache clean --force 清除npm缓存
+--再install
+
 
 
 
 解决npm install时报错无法安装chromedriver的问题
-npm install --ignore-scripts
+--npm install --ignore-scripts
 
 
 
 用vue建项目后,npm install 发现老卡在chromedriver 报错上, 后来网上查了下，发现了解决办法
-npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+--npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
 
 
 vue init webpack-simple vueDome02//新建vue项目，简化版不加载依赖需要手动加载
-cd vueDome02
-npm install
+--cd vueDome02
+--npm install
 
 
 vue:
@@ -80,3 +88,4 @@ vue-cli3已将baseURL弃用，应添加为 publicPath:process.env.NODE_ENV === "productio
 　　在处理状态上，混入是由一方发起成员创建，对全局进行一个介入，让全部组件都拥有同一个对象，相对于vuex来说很轻便的能够实现全局获取统一状态，但是对于混入的接收方对成员的状态改变是只作用于自己的，这点无法像vuex那样成员状态发生改变，全局都可知。而事件总线，相对轻便，需要通过emit触发on监听，来对事件触发做出相应的状态调整，相对于vuex来说，事件总线更适合作为事件监听，而不是状态存储。总体来说，vuex的量级会比较大，相对较小的项目就没必要非得用到vuex。
 
 7、vue2使用flow进行类型管理,所以要看源码，先了解两个，es6和flow的语法。
+
