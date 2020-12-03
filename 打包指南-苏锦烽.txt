@@ -48,3 +48,72 @@ maven : ：：(重新编译)
 mvn -U clean install -DskipTests
 
 source /etc/profile  生效环境变量
+
+
+192.168.6.168  192.168.100.56 deploy
+
+192.168.6.129  192.168.100.72 CONTROLLER-master
+
+192.168.6.52   CONTROLLER-worker
+
+192.168.6.15   192.168.100.41  EDGE
+
+sudo passwd root
+sudo vim /etc/ssh/sshd_config
+sudo service ssh restart
+
+
+ parted -l 修复
+ fix
+
+fdisk /dev/vda 
+ 第一个n
+ 两次回车
+ 第四W
+ 
+ 
+ 
+ vgextend ubuntu-vg /dev/vda4
+ lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+ resize2fs  /dev/mapper/ubuntu--vg-ubuntu--lv
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
